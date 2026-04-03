@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Smart Exam Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0f172a;
+overflow:hidden;
+}
+
+/* animated background blobs */
+
+.blob{
+position:absolute;
+width:400px;
+height:400px;
+background:linear-gradient(45deg,#6366f1,#22c55e);
+border-radius:50%;
+filter:blur(120px);
+animation:move 8s infinite alternate;
+}
+
+.blob:nth-child(2){
+left:60%;
+top:50%;
+background:linear-gradient(45deg,#ec4899,#6366f1);
+}
+
+@keyframes move{
+from{transform:translateY(-50px);}
+to{transform:translateY(50px);}
+}
+
+.login-box{
+position:relative;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:40px;
+width:350px;
+border-radius:15px;
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+color:white;
+text-align:center;
+}
+
+.login-box h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.1);
+color:white;
+outline:none;
+}
+
+input::placeholder{
+color:#ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:linear-gradient(45deg,#6366f1,#22c55e);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #6366f1;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="blob"></div>
+<div class="blob"></div>
+
+<div class="login-box">
+
+<h2>Smart Exam Planner</h2>
+
+<form method="POST">
+
+<input type="text" name="username" placeholder="Username">
+
+<input type="password" name="password" placeholder="Password">
+
+<button>Login</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

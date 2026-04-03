@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:white;
+display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:240px;
+background:#020617;
+height:100vh;
+padding:20px;
+box-shadow:2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+padding:12px;
+margin:10px 0;
+text-decoration:none;
+color:#cbd5f5;
+border-radius:8px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#6366f1;
+color:white;
+}
+
+/* Main */
+
+.main{
+flex:1;
+padding:40px;
+}
+
+.cards{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+/* Card style */
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:15px;
+width:220px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(99,102,241,0.6);
+}
+
+.card h3{
+color:#cbd5f5;
+}
+
+.card h1{
+margin-top:10px;
+font-size:35px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar"> 
+
+<h2>Exam Planner</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/students">Students</a>
+<a href="/halls">Halls</a>
+<a href="/faculty">Faculty</a>
+<a href="/seating">Seating Plan</a>
+<a href="/reports">Reports</a>
+
+</div>
+
+<div class="main">
+
+<h1>Admin Dashboard</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Students</h3>
+<h1>{{students}}</h1>
+</div>
+
+<div class="card">
+<h3>Total Halls</h3>
+<h1>{{halls}}</h1>
+</div>
+
+<div class="card">
+<h3>Total Faculty</h3>
+<h1>{{faculty}}</h1>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

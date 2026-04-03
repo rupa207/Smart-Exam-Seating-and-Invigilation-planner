@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #2c3e50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #1abc9c;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #16a085;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/students">Students</a>
+    <a href="/halls">Halls</a>
+    <a href="/faculty">Faculty</a>
+    <a href="/seating">Seating</a>
+    <a href="/reports">Reports</a>
+</div>
+
+<div class="container">
+
+    <!-- ADD FACULTY -->
+    <h2>Add Faculty</h2>
+
+    <form method="POST" action="/faculty">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="department" placeholder="Department" required>
+        <button type="submit">Add Faculty</button>
+    </form>
+
+    <hr>
+
+    <!-- CSV UPLOAD -->
+    <h2>Upload Faculty CSV</h2>
+
+    <form method="POST" action="/upload_faculty_csv" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload CSV</button>
+    </form>
+
+    <hr>
+
+    <!-- FACULTY LIST -->
+    <h2>Faculty List</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+
+        {% for f in faculty %}
+        <tr>
+            <td>{{ f.name }}</td>
+            <td>{{ f.department }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

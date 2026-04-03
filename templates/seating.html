@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seating Plan</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #2c3e50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            padding: 20px;
+        }
+
+        /* BUTTON */
+        button {
+            padding: 10px 20px;
+            background: #1abc9c;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #16a085;
+        }
+
+        /* HALL CARD */
+        .hall {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .hall-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        /* BENCH */
+        .bench {
+            background: #ecf0f1;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* STUDENT */
+        .student {
+            font-size: 12px;
+            margin: 3px 0;
+        }
+
+        .student:nth-child(1) {
+            color: #2980b9;
+        }
+
+        .student:nth-child(2) {
+            color: #c0392b;
+        }
+
+        .empty {
+            text-align: center;
+            font-size: 18px;
+            color: gray;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/students">Students</a>
+    <a href="/halls">Halls</a>
+    <a href="/faculty">Faculty</a>
+    <a href="/seating">Seating</a>
+    <a href="/reports">Reports</a>
+</div>
+
+<div class="container">
+
+    <!-- GENERATE BUTTON -->
+    <form action="/generate_seating">
+        <button type="submit">Generate Seating Plan</button>
+    </form>
+
+    <!-- SEATING DISPLAY -->
+    {% if seating %}
+        {% for hall in seating %}
+            <div class="hall">
+
+                <!-- HALL NAME + FACULTY -->
+                <div class="hall-title">
+                    🏫 {{ hall.hall }} | 👨‍🏫 {{ hall.faculty }}
+                </div>
+
+                <!-- BENCH GRID -->
+                <div class="grid">
+                    {% for bench in hall.benches %}
+                        <div class="bench">
+
+                            {% for s in bench %}
+                                <div class="student">
+                                    {{ s.roll }} ({{ s.branch }} - {{ s.year }})
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty">No seating generated yet. Click the button above.</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
