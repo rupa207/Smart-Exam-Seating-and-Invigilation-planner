@@ -54,19 +54,31 @@ name,rows,columns
 - AI-based seating  
 - Multi-user support  
 - Mobile app
+  
 ## 📸 Screenshots
+### Login
+![Login](/Screenshots/login.png)
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](/Screenshots/dashboard.png)
 
-### Students Page
-![Students](screenshots/students.png)
+### Students 
+![Students](/Screenshots/Students.png)
 
-### Seating Arrangement
-![Seating](screenshots/seating.png)
+### Halls
+![Students](/Screenshots/halls.png)
+
+### Faculty
+![Faculty](/Screenshots/faculty.png)
+
+### Seating
+![Seating](/Screenshots/generate_seating.png)
+
+### Report
+![Report](/Screenshots/reports.png)
 
 ### PDF Report
-![PDF](screenshots/pdf.png)
+![PDF](/Screenshots/reports_pdf.png)
 
 ## Developed By
 Chenna Rupa Sree
