@@ -53,7 +53,20 @@ name,rows,columns
 ## Future Enhancements
 - AI-based seating  
 - Multi-user support  
-- Mobile app  
+- Mobile app
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Students Page
+![Students](screenshots/students.png)
+
+### Seating Arrangement
+![Seating](screenshots/seating.png)
+
+### PDF Report
+![PDF](screenshots/pdf.png)
 
 ## Developed By
-Your Name
+Chenna Rupa Sree
